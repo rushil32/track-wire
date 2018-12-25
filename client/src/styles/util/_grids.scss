@@ -1,0 +1,15 @@
+%vertical-card-grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  grid-gap: 10px 10px;
+  
+  @include breakpoint(sm) {
+    grid-template-columns: auto auto;
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: auto auto auto;
+  }
+}

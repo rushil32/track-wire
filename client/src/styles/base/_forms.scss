@@ -1,0 +1,32 @@
+@import '../util//util';
+
+input, select {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid $grey-1;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-shadow: $shadow-1;
+  border-width: 1px;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid $primary;
+}
+
+select { 
+  height: 45px;
+  background:transparent; 
+}
+
+.form-input {
+  margin-bottom: 1em;
+}

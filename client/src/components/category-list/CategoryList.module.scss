@@ -1,0 +1,10 @@
+@import '../../styles/util/util';
+
+.list {
+  @extend %vertical-card-grid;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
