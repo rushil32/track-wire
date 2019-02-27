@@ -1,0 +1,82 @@
+@import '../../styles/util/util';
+
+.login {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+
+  & > div {
+    flex: 1;
+  }
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+  }
+}
+
+.brand {
+  background: $secondary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+
+  h1,
+  h2,
+  p {
+    color: white;
+  }
+
+  p {
+    opacity: 0.7;
+  }
+
+  & > div {
+    text-align: center;
+  }
+}
+
+.content {
+  animation-delay: 0.4s;
+}
+
+.logo {
+  height: 120px;
+  margin-bottom: 0.75rem;
+}
+
+.poweredBy {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    height: 15px;
+    margin-right: 0.5rem;
+  }
+}
+
+.form {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formWrapper {
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    height: 200px;
+    margin-bottom: 2rem;
+  }
+}
+

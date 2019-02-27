@@ -3401,36 +3401,36 @@
   animation-name: slideInRight;
 }
 
-// @-webkit-keyframes slideInUp {
-//   from {
-//     -webkit-transform: translate3d(0, 100%, 0);
-//     transform: translate3d(0, 100%, 0);
-//     visibility: visible;
-//   }
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
 
-//   to {
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
 
-// @keyframes slideInUp {
-//   from {
-//     -webkit-transform: translate3d(0, 100%, 0);
-//     transform: translate3d(0, 100%, 0);
-//     visibility: visible;
-//   }
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
 
-//   to {
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
 
-// .slideInUp {
-//   -webkit-animation-name: slideInUp;
-//   animation-name: slideInUp;
-// }
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
 
 // @-webkit-keyframes slideOutDown {
 //   from {

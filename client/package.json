@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "md5": "^2.2.1",
     "node-sass": "^4.10.0",
     "react": "^16.6.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.6.1",
     "react-facebook-login": "^4.1.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
-    "react-select": "^2.1.2"
+    "react-select": "^2.4.1"
   },
   "proxy": "http://localhost:3000",
   "scripts": {

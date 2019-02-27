@@ -1,0 +1,14 @@
+@import '../../styles/util/util';
+
+.dash {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  background-color: $grey-1;
+  grid-column-gap: 10px;
+
+  @include breakpoint(xs) {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../styles/util/util';
+
+.Form {
+  width: 100%;
+
+  button {
+    margin-top: 1.2rem;
+    display: block;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

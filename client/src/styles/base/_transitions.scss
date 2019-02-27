@@ -1,0 +1,37 @@
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+
+.expand-right-enter {
+  transform: translate3d(-99%, 0, 0);
+}
+
+.expand-right-enter.expand-right-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: transform 300ms ease-in;
+}
+
+.expand-right-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.expand-right-leave.expand-right-leave-active {
+  transform: translate3d(-99%, 0, 0);
+  transition: transform 300ms ease-in;
+}

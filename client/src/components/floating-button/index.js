@@ -1,10 +1,11 @@
 import React from 'react';
-
 import styles from './FloatingButton.module.scss';
 
-const FloatingButton = ({ icon, onClick }) => {
+const FloatingButton = ({ handleClick, icon }) => {
   return (
-    <button className={styles.floatingButton}></button>
+    <button onClick={handleClick}>
+      <i className="material-icons">{icon}</i>
+    </button>
   );
 }
  
