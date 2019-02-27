@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+blink:
+  name: All the small things,
+  artist: Blink 182,
+  uri: spotify:track:7yCPwWs66K8Ba5lFuU2bcx,
+  album: Enema of the State,
+  body: Before Tom left,
+  likes: 3,
+  user_id: <%= User.first.id %>
+  image: https://i.scdn.co/image/5ec4ff29311f065813234bdeee7c1364960f0c3e
+  created_at: <%= 10.minutes.ago %>
+
+linkin:
+  name: Numb,
+  artist: Linkin Park,
+  uri: spotify:track:2nLtzopw4rPReszdYBJU6h,
+  album: Meteora,
+  body: RIP Chester,
+  likes: 8,
+  user_id: <%= User.first.id %>
+  image: https://i.scdn.co/image/5ec4ff29311f065813234bdeee7c1364960f0c3e
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  name: Dizzy on the comedown,
+  artist: Turnover,
+  uri: spotify:track:2QRk4N7GObZRGyhKjUHZhP,
+  album: Peripheral Vision,
+  body: On repeat,
+  likes: 5,
+  user_id: <%= User.first.id %>
+  image: https://i.scdn.co/image/5ec4ff29311f065813234bdeee7c1364960f0c3e
+  created_at: <%= Time.zone.now %>
+

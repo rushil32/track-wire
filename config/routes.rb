@@ -1,10 +1,13 @@
-Rails.application.routes.draw do
-  root 'category#index'
+Rails.application.routes.draw do  
+  resources :user, :post, :comment
 
-  get 'category/:id/sub_categories', to: 'category#sub_categories'
-  get 'sub_category/:id/courses', to: 'sub_category#courses'
-  
-  resources :category, :sub_category, :course, :link, :user
-
+  get 'sessions/new'
   get 'course/:limit/recent', to: 'course#recent'
+  get '/spotify-token', to: 'spotify#auth_token'
+  put '/post/like/:id', to: 'post#like'
+  post '/facebook-login', to: 'user#create'
+  
+  get    '/login', to: 'sessions#user'
+  post   '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 end

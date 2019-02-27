@@ -6,93 +6,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-me = User.create(
+User.delete_all
+Post.delete_all
+Comment.delete_all
+
+user = User.create(
   :name => "Jeremy Lin",
-  :picture => "",
+  :picture => "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-1/p130x130/11866204_10153052137208202_9185614353626074331_n.jpg?_nc_cat=108&_nc_ht=scontent-lga3-1.xx&oh=d7d99ab3997de573851efed94a2b56ab&oe=5CE5C1F1",
   :email => "jlin@gmail.com",
-  :password => "foobar",
-  :password_confirmation => "foobar"
+  :password => 'foobar',
 )
 
-category = Category.create(:name => 'Tech')
-Category.create(:name => 'Management')
-Category.create(:name => 'Marketing')
-Category.create(:name => 'Data Science')
-Category.create(:name => 'Project Management')
-Category.create(:name => 'Design')
-Category.create(:name => 'Fashion')
-
-sub_category = SubCategory.create(:name => 'JavaScript', :category_id => category.id)
-SubCategory.create(:name => 'Python', :category_id => category.id)
-SubCategory.create(:name => 'Ruby on Rails', :category_id => category.id)
-
-course = Course.create(
-  :title => 'Web performance', 
-  :description => 'All the latest stuff from Google to help load pages instantly',
-  :level => 2,
-  :sub_category_id => sub_category.id,
-  :user_id => me.id
+post = Post.create(
+  :name => 'All the small things',
+  :artist => 'Blink 182',
+  :uri => 'spotify:track:7yCPwWs66K8Ba5lFuU2bcx',
+  :album => 'Enema of the State',
+  :user_id => user.id,
+  :body => 'Before Tom left',
+  :likes => 3,
+  :image => 'https://i.scdn.co/image/5ec4ff29311f065813234bdeee7c1364960f0c3e'
 )
 
-course = Course.create(
-  :title => 'The best from Google', 
-  :description => 'Google\'s best web development resources',
-  :level => 2,
-  :sub_category_id => sub_category.id,
-  :user_id => me.id
+comment = Comment.create(
+  :body => 'Throwback!',
+  :post_id => post.id,
+  :user_id => user.id
 )
-
-course = Course.create(
-  :title => 'Back to basics', 
-  :description => 'Just starting off? This is the absolute beginners guide to learning JS',
-  :level => 1,
-  :sub_category_id => sub_category.id,
-  :user_id => me.id
-)
-
-course = Course.create(
-  :title => 'Back to basics', 
-  :description => 'Just starting off? This is the absolute beginners guide to learning JS',
-  :level => 1,
-  :sub_category_id => sub_category.id,
-  :user_id => me.id
-)
-
-course = Course.create(
-  :title => 'The best from Google', 
-  :description => 'Google\'s best web development resources',
-  :level => 2,
-  :sub_category_id => sub_category.id,
-  :user_id => me.id
-)
-
-course = Course.create(
-  :title => 'The best from Google', 
-  :description => 'Google\'s best web development resources',
-  :level => 2,
-  :sub_category_id => sub_category.id,
-  :user_id => me.id
-)
-
-Link.create(
-  :url => 'https://developers.google.com/web/fundamentals/architecture/app-shell',
-  :course_id => course.id,
-  :user_id => me.id
-)
-Link.create(
-  :url => 'https://developers.google.com/web/fundamentals/performance/why-performance-matters/',
-  :course_id => course.id,
-  :user_id => me.id
-)
-Link.create(
-  :url => 'https://developers.google.com/web/fundamentals/security/',
-  :user_id => me.id
-)
-Link.create(
-  :url => 'https://developers.google.com/web/fundamentals/security/csp/',
-  :user_id => me.id
-)
-
-
-
-

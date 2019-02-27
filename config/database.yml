@@ -17,6 +17,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  timeout: 5000
+  variables:
+    tcp_keepalives_idle: 60
+    tcp_keepalives_interval: 60
+    tcp_keepalives_count: 100
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -57,9 +62,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: e_learn_dev
+  database: e_learn_test
 
-  username: e_learn
+  username: rushilsaraogi
   password: password
 
 # As with config/secrets.yml, you never want to store sensitive information,

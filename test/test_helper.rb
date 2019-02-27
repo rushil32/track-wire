@@ -9,4 +9,10 @@ class ActiveSupport::TestCase
   # fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def is_logged_in?
+    
+  end
+
+  def log_in_as
+  end
 end

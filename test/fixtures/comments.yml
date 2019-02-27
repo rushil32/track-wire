@@ -4,15 +4,8 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-michael:
-  name: Michael Scott
-  email: michael@dundermifflin.com
-  password_digest: <%= User.digest('password') %>
 
-jim:
-  name: Jim Halpert
-  email: jim@dundermifflin.com
-  password_digest: <%= User.digest('password') %>
-
-
-
+throwback:
+  body: Throwback to highschool!
+  user_id: <%= User.first.id %>
+  post_id: <%= Post.first.id %>

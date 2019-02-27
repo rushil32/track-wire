@@ -74,4 +74,30 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  test "authenticated? should return false for user with nil digest" do
+    assert_not @user.authenticated?('')
+  end
+
+  test "associated posts and comments should be destroyed" do
+    @user.save
+    post = @user.posts.create(
+      :name => 'All the small things',
+      :artist => 'Blink 182',
+      :uri => 'spotify:track:7yCPwWs66K8Ba5lFuU2bcx',
+      :album => 'Enema of the State',
+      :body => 'Before Tom left',
+      :likes => 3,
+      :image => 'https://i.scdn.co/image/5ec4ff29311f065813234bdeee7c1364960f0c3e'
+    )
+
+    post.comments.create(
+      :body => 'Throwback!',
+      :user_id => @user.id
+    )
+
+    assert_difference ['Post.count', 'Comment.count'], -1 do
+      @user.destroy
+    end
+  end
 end

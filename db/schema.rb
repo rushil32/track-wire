@@ -10,53 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_092053) do
+ActiveRecord::Schema.define(version: 2019_02_20_193031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
+    t.string "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
     t.string "name", null: false
+    t.string "uri", null: false
+    t.text "artist"
+    t.text "album"
+    t.text "body"
+    t.string "image"
+    t.integer "likes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "courses", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "description"
-    t.integer "level"
-    t.integer "sub_category_id", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["sub_category_id"], name: "index_courses_on_sub_category_id"
-  end
-
-  create_table "links", force: :cascade do |t|
-    t.string "url", limit: 200, null: false
-    t.string "title", default: ""
-    t.string "description", default: ""
-    t.string "image", default: ""
-    t.integer "course_id"
-    t.integer "user_id"
-    t.boolean "paid", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_links_on_course_id"
-  end
-
-  create_table "sub_categories", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_sub_categories_on_category_id"
-  end
-
-  create_table "sub_categories_users", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "sub_category_id"
-    t.index ["user_id", "sub_category_id"], name: "index_sub_categories_users_on_user_id_and_sub_category_id"
+    t.bigint "user_id"
+    t.index ["created_at"], name: "index_posts_on_created_at"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,7 +47,11 @@ ActiveRecord::Schema.define(version: 2019_01_21_092053) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "posts", "users"
 end
